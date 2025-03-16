@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<title>Samuel Aidoo</title>
+<title>Samuel Aidoo | Software Developer</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   html,
   body,
@@ -15,11 +15,12 @@
   h4,
   h5,
   h6 {
-    font-family: "Roboto", sans-serif
+    font-family: "Poppins", sans-serif;
   }
 
   html {
     height: 100%;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -27,395 +28,457 @@
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+
+  /* Modern color scheme */
+  :root {
+    --primary: #2563eb;
+    --primary-light: #3b82f6;
+    --primary-dark: #1d4ed8;
+    --secondary: #64748b;
+    --light: #f8fafc;
+    --dark: #1e293b;
+    --success: #10b981;
+    --accent: #8b5cf6;
+  }
+
+  /* Card styling */
+  .modern-card {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border: none;
+  }
+
+  .modern-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Skill bars */
+  .skill-bar {
+    height: 8px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    background-color: #e2e8f0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-level {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    position: relative;
+    transition: width 1s ease-in-out;
+  }
+
+  .skill-percent {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary);
+  }
+
+  /* Project links */
+  .project-link {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 8px 16px;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    color: var(--dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+
+  .project-link:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* Section headers */
+  .section-header {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: var(--dark);
+  }
+
+  .section-header:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 60px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+  }
+
+  /* Experience timeline */
+  .timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  .timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #e2e8f0;
+  }
+
+  .timeline-item:after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 0;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--primary);
+  }
+
+  .timeline-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
 
   /* Footer styles */
   footer {
-    background-color: #ddd;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  footer {
-    height: 60px;
-    /* set fixed height for footer */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-
-
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    color: white;
+    padding: 20px 0;
     text-align: center;
-  }
-
-  footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-
+    margin-top: auto;
   }
 
   footer p {
     margin: 0;
+    font-weight: 300;
+  }
+
+  /* Profile section */
+  .profile-container {
+    position: relative;
+    padding: 30px;
+  }
+
+  .profile-name {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .profile-title {
+    font-size: 16px;
+    color: var(--secondary);
+    margin-bottom: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f5f9;
+    border-radius: 50%;
+    margin-right: 15px;
+    color: var(--primary);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .w3-third, .w3-twothird {
+      width: 100%;
+    }
   }
 </style>
 
-<body class="w3-light-grey">
-
+<body>
   <!-- Page Container -->
   <div class="w3-content w3-margin-top" style="max-width:1400px;">
-
     <!-- The Grid -->
     <div class="w3-row-padding">
 
       <!-- Left Column -->
       <div class="w3-third">
-
-        <div class="w3-white w3-text-grey w3-card-4">
-          <div class="w3-display-container">
-            <div class="w3-display-bottomleft w3-container w3-text-black">
-
+        <div class="w3-white modern-card">
+          <div class="profile-container">
+            <h2 class="profile-name">Samuel Aidoo</h2>
+            <p class="profile-title"><i class="fas fa-code"></i> Software Developer</p>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <a href="https://github.com/samuelaidoo45" target="_blank" style="text-decoration:none;">github.com/samuelaidoo45</a>
             </div>
-          </div>
-          <div class="w3-container">
-            <h2>Samuel Aidoo</h2>
-            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Software Developer</p>
-            <!-- <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>CAPE COAST, GH</p> -->
-            <p><i class="fa fa-github fa-fw w3-margin-right w3-large w3-text-teal"></i><a
-                href="https://github.com/samuelaidoo45">https://github.com/samuelaidoo45</a></p>
-
-            <p><i class="fa fa-linkedin fa-fw w3-margin-right w3-large w3-text-teal"></i><a
-                  href="https://www.linkedin.com/in/samuel-aidoo-68288116a">www.linkedin.com/in/samuel-aidoo-68288116a</a></p>
-              
-
-            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>samuelaidoo45@gmail.com</p>
-            <!-- <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>0506596743</p> -->
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <a href="https://www.linkedin.com/in/samuel-aidoo-68288116a" target="_blank" style="text-decoration:none;">samuel-aidoo-68288116a</a>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <a href="mailto:samuelaidoo45@gmail.com" style="text-decoration:none;">samuelaidoo45@gmail.com</a>
+            </div>
+            
             <hr>
 
-            <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-            <p>Full Stack Web development</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">80%</div>
+            <h3 class="section-header"><i class="fas fa-star w3-margin-right w3-text-primary"></i>Core Skills</h3>
+            
+            <p>Full Stack Web Development</p>
+            <div class="skill-bar">
+              <div class="skill-level" style="width:80%"></div>
+              <span class="skill-percent">80%</span>
             </div>
 
             <p>Problem Solving</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">80%</div>
+            <div class="skill-bar">
+              <div class="skill-level" style="width:80%"></div>
+              <span class="skill-percent">80%</span>
             </div>
 
             <p>Git & Github</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">80%</div>
+            <div class="skill-bar">
+              <div class="skill-level" style="width:80%"></div>
+              <span class="skill-percent">80%</span>
             </div>
 
             <p>Docker</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">80%</div>
+            <div class="skill-bar">
+              <div class="skill-level" style="width:80%"></div>
+              <span class="skill-percent">80%</span>
             </div>
 
-
-            <div>
-              <div>
-                <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>
-                    Languages And Frameworks</b></p>
-                <p>HTML5</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:80%">
-                    <div class="w3-center w3-text-white">80%</div>
-                  </div>
+            <h3 class="section-header"><i class="fas fa-globe w3-margin-right w3-text-primary"></i>Technologies</h3>
+            
+            <div class="w3-row">
+              <div class="w3-half">
+                <p>HTML5/CSS3</p>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width:80%"></div>
+                  <span class="skill-percent">80%</span>
                 </div>
-
-                <p>CSS3</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:80%">
-                    <div class="w3-center w3-text-white">80%</div>
-                  </div>
-                </div>
-
+                
                 <p>JavaScript</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:80%">
-                    <div class="w3-center w3-text-white">80%</div>
-                  </div>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width:80%"></div>
+                  <span class="skill-percent">80%</span>
                 </div>
-
+                
                 <p>React</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:70%">
-                    <div class="w3-center w3-text-white">70%</div>
-                  </div>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width:70%"></div>
+                  <span class="skill-percent">70%</span>
                 </div>
-
-                <p>PHP|Laravel</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:70%">
-                    <div class="w3-center w3-text-white">70%</div>
-                  </div>
+                
+                <p>PHP/Laravel</p>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width:70%"></div>
+                  <span class="skill-percent">70%</span>
                 </div>
-
-                <p>PHP|Codeigniter</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:70%">
-                    <div class="w3-center w3-text-white">70%</div>
-                  </div>
+              </div>
+              
+              <div class="w3-half">
+                <p>Node/Express</p>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width:70%"></div>
+                  <span class="skill-percent">70%</span>
                 </div>
-
-                <p>Node|Express.js</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:70%">
-                    <div class="w3-center w3-text-white">70%</div>
-                  </div>
+                
+                <p>Python/Flask</p>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width:70%"></div>
+                  <span class="skill-percent">70%</span>
                 </div>
-
-                <p>Python|Flask</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:70%">
-                    <div class="w3-center w3-text-white">70%</div>
-                  </div>
+                
+                <p>Dart/Flutter</p>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width:70%"></div>
+                  <span class="skill-percent">70%</span>
                 </div>
-
-                <p>Dart|Flutter</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:70%">
-                    <div class="w3-center w3-text-white">70%</div>
-                  </div>
+                
+                <p>MySQL/PostgreSQL</p>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width:70%"></div>
+                  <span class="skill-percent">70%</span>
                 </div>
-
-
-                <p>MySQL</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:70%">
-                    <div class="w3-center w3-text-white">70%</div>
-                  </div>
-                </div>
-
-                <p>PostgreSQL</p>
-                <div class="w3-light-grey w3-round-xlarge">
-                  <div class="w3-round-xlarge w3-teal" style="height:24px;width:70%">
-                    <div class="w3-center w3-text-white">70%</div>
-                  </div>
-                </div>
-
               </div>
             </div>
-            <br>
           </div>
-        </div><br>
-
-        <!-- End Left Column -->
+        </div>
       </div>
 
-      
       <!-- Right Column -->
       <div class="w3-twothird">
+        <!-- About Me Section -->
+        <div class="w3-white modern-card w3-padding-16 w3-margin-bottom">
+          <div class="w3-container">
+            <h3 class="section-header"><i class="fas fa-user w3-margin-right w3-text-primary"></i>About Me</h3>
+            <p style="line-height: 1.8;">
+              Highly motivated software engineer with 3 years of experience in web app development. 
+              Proficient in a variety of programming languages, including JavaScript (React, Express),
+              PHP (Laravel) and Python (Flask). Skilled in agile development methodologies and a strong 
+              collaborator in cross-functional teams. Seeking a challenging role where I can utilize my 
+              skills and continue to grow as a software engineer.
+            </p>
+          </div>
+        </div>
 
-
-        <div class="w3-container w3-card w3-white">
-            <h2 class="w3-text-grey w3-padding-16"><i
-                    class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects</h2>
-            <div class="w3-container">
-                <ul class="w3-opacity">
-                    <b>
-
-                      <li><a href="https://www.aistudyguide.xyz/">AI Study Guide</a></li>
-                      <li><a href="https://fastpacetransfer.com/">Fast Pace Transfer</a></li>
-                      <li><a href="https://gptstore.ai/gpts/YDTb6c61uA-ui-designer">UI UX Designer AI</a></li>
-                      <li><a href="https://ankosfestival.com/">Ankos Festival Web Platform</a></li>
-                      <li><a href="http://37soa.edu.gh/">37soa Website</a></li>
-                      <li><a href="https://chromewebstore.google.com/detail/ai-form-filler/bmjhemfapilakkdabmpgafjejbfopefn" >AI form filler</a></li>
-                      <li><a href="https://samuelaidoo45.github.io/wdcg/">Content generator for Word Document</a></li>
-                      <!-- <li ><a href="https://worddraft.net">WordDraft</a></li> -->
-                      <li><a href="https://foovgh.org/">FOOV NGO</a></li>
-                      <li><a href="https://spa.tivateonline.com/">PRISSYLUXE SPA</a></li>
-                      <li><a href="https://app.tivateonline.com/invest50/">Invest50</a></li>
-                      <!-- <li><a href="https://app.tivateonline.com/uiconcept">UI Concept</a></li> -->
-                      <!-- <li ><a href="https://app.tivateonline.com/pomodoropal">Pomodora Task Manager</a></li> -->
-                      <!-- <li><a href="https://play.google.com/store/apps/details?id=com.tpconnect.ttuportal&hl=en&gl=US">TTU Student portal mobile app</a></li> -->
-                      <li><a href="https://samuelaidoo45.github.io/talk_with_ai/">TalkGPT</a></li>
-                      <!-- <li><a href="https://app.tivateonline.com/whowins/">WhoWins</a></li> -->
-                      <!-- <li><a href="https://nardwell.com/">NardWell</a></li> -->
-
-                      <li>
-                        Nerve Tech - Software system that keeps track of client subscriptions, renew client subscriptions, record payment, manage network nodes and sms
-                      </li>
-                      <li>
-                            Procurement System - An end-to-end solution for optimizing and automating the procurement
-                            process. This system facilitates efficient supplier management, purchase order creation,
-                            approvals, and real-time tracking of procurement activities. It enhances transparency,
-                            reduces costs, and ensures compliance with organizational policies.
-                      </li>
-                      <li>
-                            Asset Management System - A comprehensive platform designed to manage and track an
-                            organization's assets throughout their lifecycle. This system includes features for asset
-                            acquisition, maintenance scheduling, depreciation tracking, and reporting. It enables
-                            organizations to make informed decisions regarding asset utilization and replacement.
-                        </li>
-                        <li>
-                            Inventory Management System - A robust inventory control solution for tracking stock levels,
-                            managing order fulfillment, and minimizing stockouts. This system provides real-time
-                            visibility into inventory, supports barcode scanning, and streamlines reorder processes.
-                            It helps organizations optimize stock levels, reduce carrying costs, and improve overall
-                            supply chain efficiency.
-                        </li>
-                        
-                    </b>
-                </ul>
-                <hr>
+        <!-- Projects Section -->
+        <div class="w3-white modern-card w3-padding-16 w3-margin-bottom">
+          <div class="w3-container">
+            <h3 class="section-header"><i class="fas fa-laptop-code w3-margin-right w3-text-primary"></i>Projects</h3>
+            
+            <div class="w3-row">
+              <div class="w3-half">
+                <a href="https://www.aistudyguide.xyz/" target="_blank" class="project-link">AI Study Guide</a><br>
+                <a href="https://fastpacetransfer.com/" target="_blank" class="project-link">Fast Pace Transfer</a><br>
+                <a href="https://gptstore.ai/gpts/YDTb6c61uA-ui-designer" target="_blank" class="project-link">UI UX Designer AI</a><br>
+                <a href="https://ankosfestival.com/" target="_blank" class="project-link">Ankos Festival Platform</a><br>
+                <a href="http://37soa.edu.gh/" target="_blank" class="project-link">37soa Website</a><br>
+                <a href="https://chromewebstore.google.com/detail/ai-form-filler/bmjhemfapilakkdabmpgafjejbfopefn" target="_blank" class="project-link">AI Form Filler</a><br>
+              </div>
+              
+              <div class="w3-half">
+                <a href="https://samuelaidoo45.github.io/wdcg/" target="_blank" class="project-link">Word Document Content Generator</a><br>
+                <a href="https://foovgh.org/" target="_blank" class="project-link">FOOV NGO</a><br>
+                <a href="https://spa.tivateonline.com/" target="_blank" class="project-link">PRISSYLUXE SPA</a><br>
+                <a href="https://app.tivateonline.com/invest50/" target="_blank" class="project-link">Invest50</a><br>
+                <a href="https://samuelaidoo45.github.io/talk_with_ai/" target="_blank" class="project-link">TalkGPT</a><br>
+              </div>
             </div>
-        </div>
-
-        <div class="w3-container w3-card w3-white">
-          <h2 class="w3-text-grey w3-padding-16"><i
-              class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>About Me</h2>
-          <div class="w3-container">
-            <h5 class="w3-opacity"><b>Highly motivated software engineer with 3 years of experience in web app
-                development. Proficient in a variety of programming languages, including JavaScript(React,Express),
-                PHP(Laravel) and Python(Flask). Skilled in agile development methodologies and a strong collaborator in
-                cross-functional teams. Seeking a challenging role where I can utilize my skills and continue to grow as a
-                software engineer.</b></h5>
-            <hr>
-          </div>
-  
-        </div>
-  
-        <div class="w3-container w3-card w3-white">
-          <h2 class="w3-text-grey w3-padding-16">
-            <i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Experience
-          </h2>
-          <div class="w3-container">
-            <h5><b>FACE PACE TRANSFER - Software developer (JETPACK COMPOSE,VUEJS,NEXTJS,LARAVEL)</b></h5>
-            <ul>
-              <li>
-                <h5 class="w3-opacity">
-                  <b>Collaborated with mobile development teams to gather and analyze project requirements, ensuring a clear
-                    understanding of client needs and expectations.</b>
-                </h5>
-              </li>
-              <li>
-                <h5 class="w3-opacity">
-                  <b>Developed responsive and user-friendly web interfaces, enhancing the user experience and driving
-                    higher engagement rates.</b>
-                </h5>
-              </li>
-
-              <li>
-                <h5 class="w3-opacity">
-                  <b>Conducted thorough testing and debugging, identifying and resolving issues promptly to ensure smooth
-                    and error-free functionality.</b>
-                </h5>
-              </li>
-              <li>
-                <h5 class="w3-opacity">
-                  <b>Stayed updated with the latest industry trends and emerging technologies, applying best practices to
-                    continuously improve development processes.</b>
-                </h5>
-              </li>
-            </ul>
-
-            <h5><b>ROPAT SYSTEMS LTD - Full stack web developer(CODEIGNITER,LARAVEL,FLASK)</b></h5>
-            <ul>
-              <li>
-                <h5 class="w3-opacity">
-                  <b>Collaborated with cross-functional teams to gather and analyze project requirements, ensuring a clear
-                    understanding of client needs and expectations.</b>
-                </h5>
-              </li>
-              <li>
-                <h5 class="w3-opacity">
-                  <b>Developed responsive and user-friendly web interfaces, enhancing the user experience and driving
-                    higher engagement rates.</b>
-                </h5>
-              </li>
-              <li>
-                <h5 class="w3-opacity">
-                  <b>Created and maintained robust server-side applications, optimizing database structures and API
-                    endpoints for improved performance.</b>
-                </h5>
-              </li>
-              <li>
-                <h5 class="w3-opacity">
-                  <b>Conducted thorough testing and debugging, identifying and resolving issues promptly to ensure smooth
-                    and error-free functionality.</b>
-                </h5>
-              </li>
-              <li>
-                <h5 class="w3-opacity">
-                  <b>Stayed updated with the latest industry trends and emerging technologies, applying best practices to
-                    continuously improve development processes.</b>
-                </h5>
-              </li>
-            </ul>
-  
-            <h5><b>Takoradi Technical University - Software Developer(FLUTTER,LARAVEL)</b></h5>
-  
-            <ul>
-              <li>
-                <h5 clalss="w3-opacity">
-                  Work on developing T.T.U library websites
-                </h5>
-              </li>
-  
-              <li>
-                <h5 clalss="w3-opacity">
-                  
-                    Collaborate with other developers to fix bugs and improve existing
-                    solutions.
-                  
-                </h5>
-              </li>
-  
-              <li>
-                <h5 clalss="w3-opacity">
-                  
-                    Work on the mobile application for TTU school portal
-                
-                </h5>
-              </li>
-  
-  
-            </ul>
-  
-            <hr>
+            
+            <div class="w3-margin-top">
+              <div class="timeline-content w3-margin-bottom">
+                <h5><b>Nerve Tech</b></h5>
+                <p>Software system that keeps track of client subscriptions, renew client subscriptions, record payment, manage network nodes and SMS</p>
+              </div>
+              
+              <div class="timeline-content w3-margin-bottom">
+                <h5><b>Procurement System</b></h5>
+                <p>An end-to-end solution for optimizing and automating the procurement process. This system facilitates efficient supplier management, purchase order creation, approvals, and real-time tracking of procurement activities.</p>
+              </div>
+              
+              <div class="timeline-content w3-margin-bottom">
+                <h5><b>Asset Management System</b></h5>
+                <p>A comprehensive platform designed to manage and track an organization's assets throughout their lifecycle. This system includes features for asset acquisition, maintenance scheduling, depreciation tracking, and reporting.</p>
+              </div>
+              
+              <div class="timeline-content">
+                <h5><b>Inventory Management System</b></h5>
+                <p>A robust inventory control solution for tracking stock levels, managing order fulfillment, and minimizing stockouts. This system provides real-time visibility into inventory, supports barcode scanning, and streamlines reorder processes.</p>
+              </div>
+            </div>
           </div>
         </div>
-  
-  
-       
-      
 
-        <!-- <div class="w3-container w3-card w3-white">
-          <h2 class="w3-text-grey w3-padding-16"><i
-              class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+        <!-- Experience Section -->
+        <div class="w3-white modern-card w3-padding-16">
           <div class="w3-container">
-            <h5 class="w3-opacity"><b>University of Energy and Natural Resources(UENR) - Sunyani - Ghana</b></h5>
-            <h6 class="w3-opacity"><b>BSc Computer Engineering</b></h6>
-            <p>2016 - 2020</p>
-            <hr>
+            <h3 class="section-header"><i class="fas fa-briefcase w3-margin-right w3-text-primary"></i>Experience</h3>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h4>FAST PACE TRANSFER</h4>
+                <h6 class="w3-text-primary">Software Developer (Jetpack Compose, VueJS, NextJS, Laravel)</h6>
+                <ul style="padding-left: 20px; line-height: 1.6;">
+                  <li>Redesigned and developed the company website and customer portal using Next.js, improving user experience and performance</li>
+                  <li>Built responsive and interactive UI components with modern JavaScript frameworks</li>
+                  <li>Implemented secure authentication and transaction processing features</li>
+                  <li>Collaborated with the mobile team to ensure consistent user experience across web and mobile platforms</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h4>ROPAT SYSTEMS LTD</h4>
+                <h6 class="w3-text-primary">Full Stack Web Developer (CodeIgniter, Laravel, Flask)</h6>
+                <ul style="padding-left: 20px; line-height: 1.6;">
+                  <li>Collaborated with cross-functional teams to gather and analyze project requirements</li>
+                  <li>Developed responsive and user-friendly web interfaces</li>
+                  <li>Created and maintained robust server-side applications</li>
+                  <li>Conducted thorough testing and debugging</li>
+                  <li>Stayed updated with the latest industry trends and technologies</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h4>TAKORADI TECHNICAL UNIVERSITY</h4>
+                <h6 class="w3-text-primary">Software Developer (Flutter, Laravel)</h6>
+                <ul style="padding-left: 20px; line-height: 1.6;">
+                  <li>Worked on developing T.T.U library websites</li>
+                  <li>Collaborated with other developers to fix bugs and improve existing solutions</li>
+                  <li>Worked on the mobile application for TTU school portal</li>
+                </ul>
+              </div>
+            </div>
           </div>
-
-        </div> -->
-
-        <!-- End Right Column -->
+        </div>
       </div>
-
-      <!-- End Grid -->
     </div>
-
-    <!-- End Page Container -->
   </div>
 
   <br>
   <br>
-  <br>
-  <br>
 
-  <footer class="w3-container w3-teal w3-center w3-margin-top">
-    <p>&copy; 2023 samuelaidoo45. All rights reserved.</p>
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Samuel Aidoo. All rights reserved.</p>
   </footer>
 
+  <script>
+    // Animate skill bars on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const skillLevels = document.querySelectorAll('.skill-level');
+      
+      setTimeout(() => {
+        skillLevels.forEach(skill => {
+          const width = skill.style.width;
+          skill.style.width = '0';
+          
+          setTimeout(() => {
+            skill.style.width = width;
+          }, 100);
+        });
+      }, 300);
+      
+      // Update copyright year to current year
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
-
 </html>
