@@ -1,515 +1,273 @@
 <!DOCTYPE html>
-<html>
-<title>Samuel Aidoo | Full Stack Developer</title>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Samuel Aidoo — Full Stack Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 <style>
-  html,
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Poppins", sans-serif;
-  }
 
-  html {
-    height: 100%;
-    scroll-behavior: smooth;
-  }
+:root{
+  --bg:#fafafa;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+}
 
-  body {
-    margin: 0;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #f8f9fa;
-    color: #333;
-  }
+*{box-sizing:border-box}
 
-  /* Modern color scheme */
-  :root {
-    --primary: #2563eb;
-    --primary-light: #3b82f6;
-    --primary-dark: #1d4ed8;
-    --secondary: #64748b;
-    --light: #f8fafc;
-    --dark: #1e293b;
-    --success: #10b981;
-    --accent: #8b5cf6;
-  }
+body{
+  margin:0;
+  font-family:Inter,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-  /* Card styling */
-  .modern-card {
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    border: none;
-  }
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px;
+}
 
-  .modern-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  }
+.grid{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:32px;
+}
 
-  /* Skill bars */
-  .skill-bar {
-    height: 8px;
-    border-radius: 4px;
-    margin-bottom: 25px;
-    background-color: #e2e8f0;
-    position: relative;
-    overflow: hidden;
-  }
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+}
 
-  .skill-level {
-    height: 100%;
-    border-radius: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    position: relative;
-    transition: width 1s ease-in-out;
-  }
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:28px;
+  transition:.25s;
+}
 
-  .skill-percent {
-    position: absolute;
-    right: 0;
-    top: -25px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--secondary);
-  }
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
 
-  /* Project links */
-  .project-link {
-    display: inline-block;
-    margin-bottom: 12px;
-    padding: 8px 16px;
-    background-color: #f1f5f9;
-    border-radius: 8px;
-    color: var(--dark);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-weight: 500;
-  }
+h1{font-size:30px;margin:0}
+h2{font-size:20px;margin:0 0 18px}
+p{color:var(--muted);line-height:1.7}
 
-  .project-link:hover {
-    background-color: var(--primary);
-    color: white;
-    transform: translateY(-2px);
-  }
+.profile-name{font-weight:800;font-size:26px}
+.profile-title{color:var(--muted);margin-bottom:20px}
 
-  /* Section headers */
-  .section-header {
-    position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    color: var(--dark);
-  }
+.contact{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:14px;
+  font-size:14px;
+}
 
-  .section-header:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 60px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    border-radius: 2px;
-  }
+.contact i{
+  width:28px;
+  color:#555;
+}
 
-  /* Experience timeline */
-  .timeline-item {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 30px;
-  }
+.skill{margin-bottom:18px;font-size:14px}
 
-  .timeline-item:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 2px;
-    background-color: #e2e8f0;
-  }
+.skill-bar{
+  height:8px;
+  background:#eee;
+  border-radius:6px;
+  overflow:hidden;
+}
 
-  .timeline-item:after {
-    content: '';
-    position: absolute;
-    left: -4px;
-    top: 0;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    background-color: var(--primary);
-  }
+.skill-fill{
+  height:100%;
+  width:0;
+  background:#111;
+  transition:1.2s;
+}
 
-  .timeline-content {
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
+.tech-tags span{
+  display:inline-block;
+  padding:6px 10px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  font-size:12px;
+  margin:4px;
+  background:#f9fafb;
+}
 
-  /* Footer styles */
-  footer {
-    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: auto;
-  }
+.project{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px 16px;
+  margin-bottom:12px;
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+}
 
-  footer p {
-    margin: 0;
-    font-weight: 300;
-  }
+.project:hover{background:#f3f4f6}
 
-  /* Profile section */
-  .profile-container {
-    position: relative;
-    padding: 30px;
-  }
+.timeline{
+  border-left:2px solid var(--border);
+  padding-left:18px;
+}
 
-  .profile-name {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+.timeline-item{margin-bottom:18px}
 
-  .profile-title {
-    font-size: 16px;
-    color: var(--secondary);
-    margin-bottom: 20px;
-  }
+footer{
+  text-align:center;
+  color:var(--muted);
+  padding:40px 0;
+}
 
-  .contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
+.section{margin-bottom:28px}
 
-  .contact-icon {
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f1f5f9;
-    border-radius: 50%;
-    margin-right: 15px;
-    color: var(--primary);
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .w3-third, .w3-twothird {
-      width: 100%;
-    }
-  }
 </style>
+</head>
 
 <body>
-  <!-- Page Container -->
-  <div class="w3-content w3-margin-top" style="max-width:1400px;">
-    <!-- The Grid -->
-    <div class="w3-row-padding">
 
-      <!-- Left Column -->
-      <div class="w3-third">
-        <div class="w3-white modern-card">
-          <div class="profile-container">
-            <h2 class="profile-name">Samuel Aidoo</h2>
-            <p class="profile-title"><i class="fas fa-code"></i> Full Stack Developer</p>
-            
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fab fa-github"></i>
-              </div>
-              <a href="https://github.com/samuelaidoo45" target="_blank" style="text-decoration:none;">github.com/samuelaidoo45</a>
-            </div>
-            
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </div>
-              <a href="https://www.linkedin.com/in/samuel-aidoo-68288116a" target="_blank" style="text-decoration:none;">samuel-aidoo-68288116a</a>
-            </div>
-            
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <a href="mailto:samuelaidoo45@gmail.com" style="text-decoration:none;">samuelaidoo45@gmail.com</a>
-            </div>
-            
-            <hr>
+<div class="container">
+<div class="grid">
 
-            <h3 class="section-header"><i class="fas fa-star w3-margin-right w3-text-primary"></i>Core Skills</h3>
-            
-            <p>Full Stack Development</p>
-            <div class="skill-bar">
-              <div class="skill-level" style="width:80%"></div>
-              <span class="skill-percent">80%</span>
-            </div>
+<!-- LEFT -->
+<div>
 
-            <p>Problem Solving</p>
-            <div class="skill-bar">
-              <div class="skill-level" style="width:80%"></div>
-              <span class="skill-percent">80%</span>
-            </div>
+<div class="card section">
+<div class="profile-name">Samuel Aidoo</div>
+<div class="profile-title">Full Stack Developer</div>
 
-            <p>Git</p>
-            <div class="skill-bar">
-              <div class="skill-level" style="width:80%"></div>
-              <span class="skill-percent">80%</span>
-            </div>
+<div class="contact"><i class="fab fa-github"></i>
+<a href="https://github.com/samuelaidoo45" target="_blank">github.com/samuelaidoo45</a></div>
 
-            <p>Docker</p>
-            <div class="skill-bar">
-              <div class="skill-level" style="width:80%"></div>
-              <span class="skill-percent">70%</span>
-            </div>
+<div class="contact"><i class="fab fa-linkedin"></i>
+<a href="https://linkedin.com/in/samuel-aidoo-68288116a" target="_blank">LinkedIn Profile</a></div>
 
-            <h3 class="section-header"><i class="fas fa-globe w3-margin-right w3-text-primary"></i>Technologies</h3>
-            
-            <div class="w3-row">
-              <div class="w3-half">
-                <p>HTML5/CSS3</p>
-                <div class="skill-bar">
-                  <div class="skill-level" style="width:80%"></div>
-                  <span class="skill-percent">80%</span>
-                </div>
-                
-                <p>JavaScript</p>
-                <div class="skill-bar">
-                  <div class="skill-level" style="width:80%"></div>
-                  <span class="skill-percent">80%</span>
-                </div>
-                
-                <p>React</p>
-                <div class="skill-bar">
-                  <div class="skill-level" style="width:70%"></div>
-                  <span class="skill-percent">70%</span>
-                </div>
-                
-                <p>PHP/Laravel</p>
-                <div class="skill-bar">
-                  <div class="skill-level" style="width:70%"></div>
-                  <span class="skill-percent">70%</span>
-                </div>
-              </div>
-              
-              <div class="w3-half">
-                <p>Node/Express</p>
-                <div class="skill-bar">
-                  <div class="skill-level" style="width:70%"></div>
-                  <span class="skill-percent">70%</span>
-                </div>
-                
-                <p>Python/Flask</p>
-                <div class="skill-bar">
-                  <div class="skill-level" style="width:70%"></div>
-                  <span class="skill-percent">70%</span>
-                </div>
-                
-                <p>Dart/Flutter</p>
-                <div class="skill-bar">
-                  <div class="skill-level" style="width:70%"></div>
-                  <span class="skill-percent">70%</span>
-                </div>
-                
-                <p>MySQL/PostgreSQL</p>
-                <div class="skill-bar">
-                  <div class="skill-level" style="width:70%"></div>
-                  <span class="skill-percent">70%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="contact"><i class="fas fa-envelope"></i>
+<a href="mailto:samuelaidoo45@gmail.com">samuelaidoo45@gmail.com</a></div>
+</div>
 
-      <!-- Right Column -->
-      <div class="w3-twothird">
-        <!-- About Me Section -->
-        <div class="w3-white modern-card w3-padding-16 w3-margin-bottom">
-          <div class="w3-container">
-            <h3 class="section-header"><i class="fas fa-user w3-margin-right w3-text-primary"></i>About Me</h3>
-            <p style="line-height: 1.8;">
-              Highly motivated full stack developer with 4 years of experience in web and mobile app development. 
-              Proficient in a variety of programming languages, including JavaScript (React, Express),
-              PHP (Laravel), Python (Flask), Flutter(Dart). Skilled in agile development methodologies and a strong 
-              collaborator in cross-functional teams. Seeking a challenging role where I can utilize my 
-              skills and continue to grow as a software engineer.
-            </p>
-          </div>
-        </div>
+<div class="card section">
+<h2>Core Skills</h2>
 
-        <!-- Projects Section -->
-        <div class="w3-white modern-card w3-padding-16 w3-margin-bottom">
-          <div class="w3-container">
+<div class="skill">Full Stack Development<div class="skill-bar"><div class="skill-fill" data-w="85%"></div></div></div>
+<div class="skill">Next.js Applications<div class="skill-bar"><div class="skill-fill" data-w="85%"></div></div></div>
+<div class="skill">Problem Solving<div class="skill-bar"><div class="skill-fill" data-w="80%"></div></div></div>
+<div class="skill">Git & Version Control<div class="skill-bar"><div class="skill-fill" data-w="85%"></div></div></div>
+<div class="skill">Docker & Deployment<div class="skill-bar"><div class="skill-fill" data-w="70%"></div></div></div>
 
-            <h3 class="section-header"><i class="fas fa-laptop-code w3-margin-right w3-text-primary"></i>Projects</h3>
-            
-            <div class="w3-row">
-              <div class="w3-half">
-                <a href="https://www.pencilart.app/" target="_blank" class="project-link">Pencil Art AI</a><br>
-                <a href="https://www.aiphotoshoots.app/" target="_blank" class="project-link">AI Photoshoots</a><br>
-                <a href="https://www.storystory.online/" target="_blank" class="project-link">StoryStory</a><br>
-                <a href="https://www.aistudyguide.xyz/" target="_blank" class="project-link">TopicSimplify</a><br>
-                    <!-- <a href="https://fastpacetransfer.com/" target="_blank" class="project-link">Fast Pace Transfer Website</a><br> -->
-                <a href="https://www.youtubethumbnailgenerator.app/" target="_blank" class="project-link">Youtube Thumbnail Generator</a><br>
-                <a href="https://app.fastpacetransfer.com/" target="_blank" class="project-link">Fast Pace Transfer App </a><br>
-                <a href="https://chromewebstore.google.com/detail/ai-form-filler/bmjhemfapilakkdabmpgafjejbfopefn" target="_blank" class="project-link">AI Form Filler</a><br>
-                <a href="https://www.porialspitch.com/" target="_blank" class="project-link">Porials Pitch</a><br>
-                <a href="https://bookafrica.net/" target="_blank" class="project-link">Book Africa</a><br>
-                <a href="https://audiophile-two-sigma.vercel.app/" target="_blank" class="project-link">Audiophile</a><br>
-                <a href="https://www.uiuxpilot.com/" target="_blank" class="project-link">UIUX BLOG</a><br>
-                <a href="https://gptstore.ai/gpts/YDTb6c61uA-ui-designer" target="_blank" class="project-link">UI UX Designer AI</a><br>
-                <a href="https://ankosfestival.com/" target="_blank" class="project-link">Ankos Festival Platform</a><br>
-              </div>
-              
-              <div class="w3-half">
-                <a href="https://samuelaidoo45.github.io/wdcg/" target="_blank" class="project-link">Word Document Content Generator</a><br>
-                <!-- <a href="https://spa.tivateonline.com/" target="_blank" class="project-link">PRISSYLUXE SPA</a><br> -->
-                <!-- <a href="https://app.tivateonline.com/invest50/" target="_blank" class="project-link">Invest50</a><br> -->
-                <a href="https://samuelaidoo45.github.io/talk_with_ai/" target="_blank" class="project-link">TalkGPT</a><br>
-              </div>
-            </div>
-            
-            <div class="w3-margin-top">
-              <div class="timeline-content w3-margin-bottom">
-                <h5><b>Nerve Tech</b></h5>
-                <p>Software system that keeps track of client subscriptions, renew client subscriptions, record payment, manage network nodes and SMS</p>
-              </div>
-              
-              <div class="timeline-content w3-margin-bottom">
-                <h5><b>Procurement System</b></h5>
-                <p>An end-to-end solution for optimizing and automating the procurement process. This system facilitates efficient supplier management, purchase order creation, approvals, and real-time tracking of procurement activities.</p>
-              </div>
-              
-              <div class="timeline-content w3-margin-bottom">
-                <h5><b>Asset Management System</b></h5>
-                <p>A comprehensive platform designed to manage and track an organization's assets throughout their lifecycle. This system includes features for asset acquisition, maintenance scheduling, depreciation tracking, and reporting.</p>
-              </div>
-              
-              <div class="timeline-content">
-                <h5><b>Inventory Management System</b></h5>
-                <p>A robust inventory control solution for tracking stock levels, managing order fulfillment, and minimizing stockouts. This system provides real-time visibility into inventory, supports barcode scanning, and streamlines reorder processes.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+</div>
 
-        <!-- Experience Section -->
-        <div class="w3-white modern-card w3-padding-16">
-          <div class="w3-container">
-            <h3 class="section-header"><i class="fas fa-briefcase w3-margin-right w3-text-primary"></i>Experience</h3>
-            
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h4>FAST PACE TRANSFER</h4>
-                <h6 class="w3-text-primary">Software Developer (Jetpack Compose, VueJS, NextJS, Laravel)</h6>
-                <ul style="padding-left: 20px; line-height: 1.6;">
-                  <li>Redesigned and developed the company website and customer portal using Next.js, improving user experience and performance</li>
-                  <li>Built responsive and interactive UI components with modern JavaScript frameworks</li>
-                  <li>Implemented secure authentication and transaction processing features</li>
-                  <li>Collaborated with the mobile team to ensure consistent user experience across web and mobile platforms</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h4>ROPAT SYSTEMS LTD</h4>
-                <h6 class="w3-text-primary">Full Stack Web Developer (CodeIgniter, Laravel, Flask)</h6>
-                <ul style="padding-left: 20px; line-height: 1.6;">
-                  <li>Collaborated with cross-functional teams to gather and analyze project requirements</li>
-                  <li>Developed responsive and user-friendly web interfaces</li>
-                  <li>Created and maintained robust server-side applications</li>
-                  <li>Conducted thorough testing and debugging</li>
-                  <li>Stayed updated with the latest industry trends and technologies</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <h4>TAKORADI TECHNICAL UNIVERSITY</h4>
-                <h6 class="w3-text-primary">Software Developer (HTML5,CSS3,JS,Flutter, Laravel)</h6>
-                <ul style="padding-left: 20px; line-height: 1.6;">
-                  <li>Worked on developing T.T.U library websites</li>
-                  <li>Collaborated with other developers to fix bugs and improve existing solutions</li>
-                  <li>Worked on the mobile application for TTU school portal</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="card section">
+<h2>Technology Stack</h2>
 
-  <br>
-  <br>
+<div class="tech-tags">
+<span>HTML5</span>
+<span>CSS3</span>
+<span>JavaScript</span>
+<span>React</span>
+<span>Next.js</span>
+<span>Node</span>
+<span>Express</span>
+<span>Laravel</span>
+<span>Flask</span>
+<span>Flutter</span>
+<span>PostgreSQL</span>
+<span>MySQL</span>
+</div>
 
-  <footer>
-    <p>&copy; <span id="currentYear"></span> Samuel Aidoo. All rights reserved.</p>
-  </footer>
+</div>
 
-  <script>
-    // Animate skill bars on page load
-    document.addEventListener('DOMContentLoaded', function() {
-      const skillLevels = document.querySelectorAll('.skill-level');
-      
-      setTimeout(() => {
-        skillLevels.forEach(skill => {
-          const width = skill.style.width;
-          skill.style.width = '0';
-          
-          setTimeout(() => {
-            skill.style.width = width;
-          }, 100);
-        });
-      }, 300);
-      
-      // Update copyright year to current year
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-    });
-  </script>
-  <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+</div>
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCwmEvvwXFXCESCSmjtlTQAzDo8mY4pIH8",
-    authDomain: "portfolio-cbebd.firebaseapp.com",
-    projectId: "portfolio-cbebd",
-    storageBucket: "portfolio-cbebd.firebasestorage.app",
-    messagingSenderId: "1050441088006",
-    appId: "1:1050441088006:web:570ab43efec5f2e9bbd787",
-    measurementId: "G-S0WC0LKYTY"
-  };
+<!-- RIGHT -->
+<div>
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+<div class="card section">
+<h2>About</h2>
+<p>
+Full stack developer with over four years of experience building web and mobile applications.
+Experienced with React and Next.js for modern frontend and full-stack platforms, alongside Laravel,
+Node/Express, Flask and Flutter. Comfortable working across product, API and infrastructure layers.
+Focused on scalable architecture, performance and real-world product delivery.
+</p>
+</div>
+
+<div class="card section">
+<h2>Projects</h2>
+
+<div class="project"><a href="https://pencilart.app" target="_blank">Pencil Art AI</a><span>↗</span></div>
+<div class="project"><a href="https://aiphotoshoots.app" target="_blank">AI Photoshoots</a><span>↗</span></div>
+<div class="project"><a href="https://storystory.online" target="_blank">StoryStory</a><span>↗</span></div>
+<div class="project"><a href="https://aistudyguide.xyz" target="_blank">TopicSimplify</a><span>↗</span></div>
+<div class="project"><a href="https://youtubethumbnailgenerator.app" target="_blank">Youtube Thumbnail Generator</a><span>↗</span></div>
+<div class="project"><a href="https://app.fastpacetransfer.com" target="_blank">Fast Pace Transfer App</a><span>↗</span></div>
+<div class="project"><a href="https://chromewebstore.google.com/detail/ai-form-filler/bmjhemfapilakkdabmpgafjejbfopefn" target="_blank">AI Form Filler</a><span>↗</span></div>
+<div class="project"><a href="https://porialspitch.com" target="_blank">Porials Pitch</a><span>↗</span></div>
+<div class="project"><a href="https://bookafrica.net" target="_blank">Book Africa</a><span>↗</span></div>
+<div class="project"><a href="https://audiophile-two-sigma.vercel.app" target="_blank">Audiophile</a><span>↗</span></div>
+<div class="project"><a href="https://uiuxpilot.com" target="_blank">UIUX Blog</a><span>↗</span></div>
+<div class="project"><a href="https://gptstore.ai/gpts/YDTb6c61uA-ui-designer" target="_blank">UI UX Designer AI</a><span>↗</span></div>
+<div class="project"><a href="https://ankosfestival.com" target="_blank">Ankos Festival Platform</a><span>↗</span></div>
+<div class="project"><a href="https://samuelaidoo45.github.io/wdcg/" target="_blank">Word Document Generator</a><span>↗</span></div>
+<div class="project"><a href="https://samuelaidoo45.github.io/talk_with_ai/" target="_blank">TalkGPT</a><span>↗</span></div>
+
+</div>
+
+<div class="card section">
+<h2>Enterprise Systems</h2>
+<p>Nerve Tech — subscription, payment and network node management platform</p>
+<p>Procurement System — supplier workflow and approval automation</p>
+<p>Asset Management System — lifecycle and maintenance tracking</p>
+<p>Inventory Management System — stock and fulfillment control</p>
+</div>
+
+<div class="card section">
+<h2>Experience</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+Fast Pace Transfer — Software Developer  
+<p>Built and maintained fintech platforms using Next.js, Vue, Laravel and Jetpack Compose across web and mobile products.</p>
+</div>
+
+<div class="timeline-item">
+Ropat Systems Ltd — Full Stack Developer  
+<p>Delivered enterprise procurement, asset and inventory management systems.</p>
+</div>
+
+<div class="timeline-item">
+Takoradi Technical University — Developer  
+<p>Developed library websites and student portal mobile applications.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<footer>
+© <span id="year"></span> Samuel Aidoo
+</footer>
+
+<script>
+document.querySelectorAll(".skill-fill").forEach(el=>{
+  el.style.width = el.dataset.w;
+});
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
