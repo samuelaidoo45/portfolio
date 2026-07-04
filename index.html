@@ -1,282 +1,291 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Samuel Aidoo | Software Engineer</title>
+    <meta
+      name="description"
+      content="Samuel Aidoo is a software engineer in Accra, Ghana building secure Java Spring Boot, fintech, web, mobile, and AI-powered systems."
+    />
+    <meta property="og:title" content="Samuel Aidoo | Software Engineer" />
+    <meta
+      property="og:description"
+      content="Backend-focused software engineer building reliable fintech platforms, REST APIs, cloud deployments, and polished product experiences."
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23151414'/%3E%3Cpath d='M17 39h10c0 3 2 5 6 5 4 0 6-2 6-5 0-4-4-4-9-6-6-2-12-5-12-13 0-7 6-12 15-12s15 5 15 13H38c0-3-2-5-5-5s-5 2-5 4c0 4 4 4 9 6 6 2 13 5 13 13 0 8-6 13-16 13-11 0-17-5-17-13z' fill='%23fffdf8'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Samuel Aidoo home">
+        <span class="brand-mark">SA</span>
+        <span>Samuel Aidoo</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-<title>Samuel Aidoo — Software Engineer</title>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Software Engineer · Accra, Ghana</p>
+            <h1>Building reliable fintech platforms with product-grade polish.</h1>
+            <p class="hero-text">
+              Java Spring Boot-focused engineer with 4+ years shipping REST
+              APIs, payment workflows, cloud deployments, web platforms, mobile
+              experiences, and AI-powered internal tools.
+            </p>
+            <div class="hero-actions" aria-label="Primary links">
+              <a class="button primary" href="mailto:samuelaidoo45@gmail.com">Email Samuel</a>
+              <a class="button secondary" href="output/pdf/Samuel_Aidoo_Java_Spring_Boot_CV.pdf">View Resume</a>
+              <a class="button ghost" href="https://github.com/samuelaidoo45">GitHub</a>
+            </div>
+          </div>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+          <aside class="proof-panel" aria-label="Career highlights">
+            <div class="proof-header">
+              <span class="status-dot"></span>
+              <span>Backend · Fintech · Product Delivery</span>
+            </div>
+            <div class="metric-row">
+              <div>
+                <strong>GHS 50M+</strong>
+                <span>transaction workflows supported</span>
+              </div>
+              <div>
+                <strong>4+ yrs</strong>
+                <span>production software delivery</span>
+              </div>
+            </div>
+            <img
+              src="assets/portfolio/cv-preview.png"
+              alt="Preview of Samuel Aidoo's software engineering CV"
+            />
+          </aside>
+        </div>
+      </section>
 
-<style>
+      <section class="signal-strip" aria-label="Hiring signals">
+        <div>
+          <span>01</span>
+          <strong>Payment workflows</strong>
+          <p>Secure remittance, partner settlement, gateway routing, and wallet operations.</p>
+        </div>
+        <div>
+          <span>02</span>
+          <strong>Reliable APIs</strong>
+          <p>REST services, SQL models, validations, audit trails, and cloud deployment.</p>
+        </div>
+        <div>
+          <span>03</span>
+          <strong>Product sense</strong>
+          <p>Interfaces that improve conversion, clarity, operations, and support outcomes.</p>
+        </div>
+      </section>
 
-:root{
-  --bg:#fafafa;
-  --card:#ffffff;
-  --text:#111827;
-  --muted:#6b7280;
-  --border:#e5e7eb;
-}
+      <section class="section" id="work">
+        <div class="section-kicker">
+          <p class="eyebrow">Selected impact</p>
+          <h2>Engineer for teams that need software to hold up in production.</h2>
+        </div>
+        <div class="impact-grid">
+          <article class="impact-card">
+            <span>Fast Pace Transfer</span>
+            <h3>Payment and remittance platform engineering</h3>
+            <p>
+              Built and improved transaction workflows, partner operations, and
+              API-driven payment features for web and mobile products.
+            </p>
+          </article>
+          <article class="impact-card">
+            <span>Ropat Systems</span>
+            <h3>Operational platforms and AI knowledge tools</h3>
+            <p>
+              Delivered inventory, asset management, and document-chat systems
+              that improved retrieval speed, asset visibility, and team output.
+            </p>
+          </article>
+          <article class="impact-card">
+            <span>Takoradi Technical University</span>
+            <h3>High-traffic student and admissions systems</h3>
+            <p>
+              Redesigned portals and helped ship a mobile student app that
+              passed 5,000 downloads while reducing reported user issues.
+            </p>
+          </article>
+        </div>
+      </section>
 
-*{box-sizing:border-box}
+      <section class="case-study" id="projects">
+        <div class="case-copy">
+          <p class="eyebrow">Featured case study</p>
+          <h2>FastPace Portal settlement and gateway operations.</h2>
+          <p>
+            Designed requirements and implementation paths for safer partner
+            settlement, commission reversal, chargebacks, operational wallet
+            statements, gateway fallback routing, target-gateway push, and
+            transaction statistics.
+          </p>
+        </div>
+        <div class="case-board" aria-label="FastPace Portal feature map">
+          <div>
+            <span>Settlement</span>
+            <strong>Multiple account rules</strong>
+          </div>
+          <div>
+            <span>Controls</span>
+            <strong>RBAC, 403s, audit logs</strong>
+          </div>
+          <div>
+            <span>Gateway ops</span>
+            <strong>Fallback and manual override</strong>
+          </div>
+          <div>
+            <span>Exports</span>
+            <strong>Async, chunked, reconciliation-ready</strong>
+          </div>
+        </div>
+      </section>
 
-body{
-  margin:0;
-  font-family:Inter,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+      <section class="section">
+        <div class="section-kicker compact">
+          <p class="eyebrow">Project portfolio</p>
+          <h2>Proof across backend, frontend, mobile, and AI systems.</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-topline">
+              <span>Fintech</span>
+              <span>Java · Spring Boot · SQL</span>
+            </div>
+            <h3>Payment and Remittance Features</h3>
+            <p>
+              Secure transaction handling, partner payment flows, settlement
+              operations, and REST API integrations for remittance products.
+            </p>
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span>Operations</span>
+              <span>Node · React · SQL</span>
+            </div>
+            <h3>Inventory and Asset Management</h3>
+            <p>
+              Database-backed asset tracking workflows, reporting surfaces, and
+              operational controls that reduced discrepancies by 25%.
+            </p>
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span>AI</span>
+              <span>GPT-Index · APIs</span>
+            </div>
+            <h3>AI Document Chat System</h3>
+            <p>
+              Document question-answering platform for faster knowledge
+              retrieval across uploaded files and internal resources.
+            </p>
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span>SaaS</span>
+              <span>Next.js · UX · APIs</span>
+            </div>
+            <h3>TopicSimplify</h3>
+            <p>
+              AI-powered research tool launched with hundreds of active users,
+              tuned for fast comprehension and clean user workflows.
+            </p>
+          </article>
+        </div>
+      </section>
 
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:40px 20px;
-}
+      <section class="stack-section" id="stack">
+        <div>
+          <p class="eyebrow">Technology stack</p>
+          <h2>Comfortable from service design to deployment.</h2>
+        </div>
+        <div class="stack-columns">
+          <div>
+            <h3>Backend</h3>
+            <p>Java, Spring Boot, Spring MVC, REST APIs, Microservices, Node.js, Express</p>
+          </div>
+          <div>
+            <h3>Frontend</h3>
+            <p>React, Next.js, TypeScript, JavaScript, Tailwind CSS, HTML, CSS, Figma</p>
+          </div>
+          <div>
+            <h3>Data & Cloud</h3>
+            <p>SQL, MySQL, Firestore, Docker, Azure, GCP, Firebase, Vercel, CI/CD</p>
+          </div>
+          <div>
+            <h3>Reliability</h3>
+            <p>RabbitMQ, Kafka, Prometheus, Grafana, OpenTelemetry, Jaeger, API testing</p>
+          </div>
+        </div>
+      </section>
 
-.grid{
-  display:grid;
-  grid-template-columns:320px 1fr;
-  gap:32px;
-}
+      <section class="timeline-section">
+        <div class="section-kicker compact">
+          <p class="eyebrow">Experience</p>
+          <h2>Recent roles</h2>
+        </div>
+        <div class="timeline">
+          <article>
+            <span>Sep 2024 - Present</span>
+            <h3>Software Engineer · Fast Pace Transfer</h3>
+            <p>
+              Remittance platform engineering, secure payment workflows,
+              partner onboarding flows, web improvements, and deployment-ready
+              feature delivery.
+            </p>
+          </article>
+          <article>
+            <span>Aug 2021 - Aug 2024</span>
+            <h3>Full-Stack Web Developer · Ropat Systems Ltd</h3>
+            <p>
+              Client applications, REST integrations, operational systems,
+              cloud/server work, Git adoption, backups, and AI-assisted document
+              search.
+            </p>
+          </article>
+          <article>
+            <span>Sep 2020 - Sep 2021</span>
+            <h3>Software Developer · Takoradi Technical University</h3>
+            <p>
+              Admissions, library, student portal, and Android student app work
+              for high-volume academic workflows.
+            </p>
+          </article>
+        </div>
+      </section>
 
-@media(max-width:900px){
-  .grid{grid-template-columns:1fr}
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:28px;
-  transition:.25s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
-}
-
-h1{font-size:30px;margin:0}
-h2{font-size:20px;margin:0 0 18px}
-p{color:var(--muted);line-height:1.7}
-
-.profile-name{font-weight:800;font-size:26px}
-.profile-title{color:var(--muted);margin-bottom:20px}
-
-.contact{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:14px;
-  font-size:14px;
-}
-
-.contact i{
-  width:28px;
-  color:#555;
-}
-
-.skill{margin-bottom:18px;font-size:14px}
-
-.skill-bar{
-  height:8px;
-  background:#eee;
-  border-radius:6px;
-  overflow:hidden;
-}
-
-.skill-fill{
-  height:100%;
-  width:0;
-  background:#111;
-  transition:1.2s;
-}
-
-.tech-tags span{
-  display:inline-block;
-  padding:6px 10px;
-  border:1px solid var(--border);
-  border-radius:999px;
-  font-size:12px;
-  margin:4px;
-  background:#f9fafb;
-}
-
-.project{
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:14px 16px;
-  margin-bottom:12px;
-  display:flex;
-  justify-content:space-between;
-  font-size:14px;
-}
-
-.project:hover{background:#f3f4f6}
-
-.timeline{
-  border-left:2px solid var(--border);
-  padding-left:18px;
-}
-
-.timeline-item{margin-bottom:18px}
-
-footer{
-  text-align:center;
-  color:var(--muted);
-  padding:40px 0;
-}
-
-.section{margin-bottom:28px}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-<div class="grid">
-
-<!-- LEFT -->
-<div>
-
-<div class="card section">
-<div class="profile-name">Samuel Aidoo</div>
-<div class="profile-title">Software Engineer</div>
-
-<div class="contact"><i class="fab fa-github"></i>
-<a href="https://github.com/samuelaidoo45" target="_blank">github.com/samuelaidoo45</a></div>
-
-<div class="contact"><i class="fab fa-linkedin"></i>
-<a href="https://linkedin.com/in/samuel-aidoo-68288116a" target="_blank">LinkedIn Profile</a></div>
-
-<div class="contact"><i class="fas fa-envelope"></i>
-<a href="mailto:samuelaidoo45@gmail.com">samuelaidoo45@gmail.com</a></div>
-</div>
-
-<div class="card section">
-<h2>Core Skills</h2>
-
-<div class="skill">Software Engineering<div class="skill-bar"><div class="skill-fill" data-w="85%"></div></div></div>
-<div class="skill">Next.js Applications<div class="skill-bar"><div class="skill-fill" data-w="85%"></div></div></div>
-<div class="skill">Problem Solving<div class="skill-bar"><div class="skill-fill" data-w="80%"></div></div></div>
-<div class="skill">Git & Version Control<div class="skill-bar"><div class="skill-fill" data-w="85%"></div></div></div>
-<div class="skill">Docker & Deployment<div class="skill-bar"><div class="skill-fill" data-w="70%"></div></div></div>
-
-</div>
-
-<div class="card section">
-<h2>Technology Stack</h2>
-
-<div class="tech-tags">
-<span>HTML5</span>
-<span>CSS3</span>
-<span>JavaScript</span>
-<span>React</span>
-<span>Next.js</span>
-<span>Node</span>
-<span>Express</span>
-<span>Java</span>
-<span>Laravel</span>
-<span>Flask</span>
-<span>Flutter</span>
-<span>PostgreSQL</span>
-<span>MySQL</span>
-<span>Azure</span>
-</div>
-
-</div>
-
-</div>
-
-<!-- RIGHT -->
-<div>
-
-<div class="card section">
-<h2>About</h2>
-<p>
-Software Engineer with 4+ years of
-experience building production web, mobile, fintech, and AI-powered
-systems. Strong in REST API design, secure payment workflows,
-microservice-oriented architecture, SQL databases, cloud deployment,
-and cross-functional delivery. Skilled across Java, Spring Boot,
-JavaScript/TypeScript, React, Next.js, Node.js, and Express, with a
-practical focus on reliable backend services and polished user
-experiences.
-</p>
-</div>
-
-<div class="card section">
-<h2>Projects</h2>
-
-<div class="project"><a href="https://porialspitch.com" target="_blank">Porials Pitch</a><span>↗</span></div>
-<div class="project"><a href="https://www.madrankup.com" target="_blank">Rebirth Campus Live - MAD Rank UP</a><span>↗</span></div>
-<div class="project"><a href="https://www.serwaaamiherefoundation.com/" target="_blank">Serwaa Amihere Foundation</a><span>↗</span></div>
-<div class="project"><a href="https://www.andymoautos.com/" target="_blank">AndyMo Autos</a><span>↗</span></div>
-<div class="project"><a href="https://aistudyguide.xyz" target="_blank">TopicSimplify</a><span>↗</span></div>
-<div class="project"><a href="https://www.techpathresources.com/" target="_blank">TechPath Resources</a><span>↗</span></div>
-<div class="project"><a href="https://app.fastpacetransfer.com" target="_blank">Fast Pace Transfer App</a><span>↗</span></div>
-<div class="project"><a href="https://developer.fastpacetransfer.com/" target="_blank">API Documentation Portal</a><span>↗</span></div>
-<div class="project"><a href="https://storystory.online" target="_blank">StoryStory</a><span>↗</span></div>
-<div class="project"><a href="https://pencilart.app" target="_blank">Pencil Art AI</a><span>↗</span></div>
-<div class="project"><a href="https://aiphotoshoots.app" target="_blank">AI Photoshoots</a><span>↗</span></div>
-<div class="project"><a href="https://youtubethumbnailgenerator.app" target="_blank">Youtube Thumbnail Generator</a><span>↗</span></div>
-<div class="project"><a href="https://chromewebstore.google.com/detail/ai-form-filler/bmjhemfapilakkdabmpgafjejbfopefn" target="_blank">AI Form Filler</a><span>↗</span></div>
-<!-- <div class="project"><a href="https://bookafrica.net" target="_blank">Book Africa</a><span>↗</span></div> -->
-<div class="project"><a href="https://chatgpt.com/g/g-AnfMn0gbM-figmapro-ui-ux-web-design-prototyping-tool" target="_blank">UI UX Designer AI</a><span>↗</span></div>
-<!-- <div class="project"><a href="https://gptstore.ai/gpts/YDTb6c61uA-ui-designer" target="_blank">UI UX Designer AI</a><span>↗</span></div> -->
-<div class="project"><a href="https://ankosfestival.com" target="_blank">Ankos Festival Platform</a><span>↗</span></div>
-<div class="project"><a href="https://audiophile-two-sigma.vercel.app" target="_blank">Audiophile</a><span>↗</span></div>
-<div class="project"><a href="https://uiuxpilot.com" target="_blank">UIUX Blog</a><span>↗</span></div>
-</div>
-
-<div class="card section">
-<h2>Enterprise Systems</h2>
-<p>Nerve Tech — subscription, payment and network node management platform</p>
-<p>Procurement System — supplier workflow and approval automation</p>
-<p>Asset Management System — lifecycle and maintenance tracking</p>
-<p>Inventory Management System — stock and fulfillment control</p>
-</div>
-
-<div class="card section">
-<h2>Experience</h2>
-
-<div class="timeline">
-
-<div class="timeline-item">
-Fast Pace Transfer — Software Engineer  
-<p>Built and maintained fintech platforms using Next.js, Vue, Laravel and Jetpack Compose across web and mobile products.</p>
-</div>
-
-<div class="timeline-item">
-Ropat Systems Ltd — Full Stack Developer  
-<p>Delivered enterprise procurement, asset and inventory management systems.</p>
-</div>
-
-<div class="timeline-item">
-Takoradi Technical University — Software Developer  
-<p>Developed library websites and student portal mobile applications.</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div>
-</div>
-
-<footer>
-© <span id="year"></span> Samuel Aidoo
-</footer>
-
-<script>
-document.querySelectorAll(".skill-fill").forEach(el=>{
-  el.style.width = el.dataset.w;
-});
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-</body>
+      <section class="contact-section" id="contact">
+        <div>
+          <p class="eyebrow">Let’s build</p>
+          <h2>Hiring for backend, fintech, or full-stack product work?</h2>
+          <p>
+            I bring backend rigor, product judgment, and delivery focus to teams
+            building systems where reliability, security, and user experience
+            all matter.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:samuelaidoo45@gmail.com">samuelaidoo45@gmail.com</a>
+          <a class="button secondary" href="https://linkedin.com/in/samuel-aidoo-68288116a">LinkedIn</a>
+          <a class="button ghost" href="https://samuelaidoo45.github.io/portfolio">Live Portfolio</a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
