@@ -306,5 +306,22 @@
         </div>
       </section>
     </main>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyA-g4jU8_C2WMQVsrnmt8cYJmiD7KwO-dE",
+        authDomain: "portfolio-85c0e.firebaseapp.com",
+        projectId: "portfolio-85c0e",
+        storageBucket: "portfolio-85c0e.firebasestorage.app",
+        messagingSenderId: "258355922845",
+        appId: "1:258355922845:web:714f0f9145468a3c471174",
+        measurementId: "G-F1YVYMNJEE"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      getAnalytics(app);
+    </script>
   </body>
 </html>
